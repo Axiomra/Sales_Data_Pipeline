@@ -1,3 +1,4 @@
+-- rpofitability file
 with
     source as (
         select * from {{ source("retails_raw_data_bq", "profitability_data_csv") }}
