@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: fact_profitability
+    description: "Final sales and profit table"
+    tests:
+      - dbt_utils.equal_rowcount:
+          arguments:
+            compare_model: ref('stg_profitability')
+    columns:
+      - name: customer_key
+        tests:
+          - not_null
+          - relationships:
+              arguments: # Ye line dalna zaroori thi
+                to: ref('dim_customer')
+                field: customer_key

@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: retails_raw_data_bq
+    database: sales-intelligence-pipeline
+    schema: retails_raw_data_bq
+    tables:
+      - name: group_sales_report_csv
+      - name: profitability_data_csv

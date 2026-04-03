@@ -1,0 +1,25 @@
+name: 'retails_analytics_pipeline' # Aapki image se liya gaya asli naam
+version: '1.0.0'
+config-version: 2
+
+# dbt Cloud aam tor par yahan 'default' use karta hai
+profile: 'default' 
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  retails_analytics_pipeline:
+    staging:
+      +schema: staging
+      +materialized: view
+    marts:
+      +schema: star
+      +materialized: table
