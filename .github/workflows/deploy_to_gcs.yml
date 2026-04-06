@@ -23,4 +23,4 @@ jobs:
           path: ./  # Pura dbt project folder
           destination: us-central1-retails-data-pi-245c6429-bucket/dags/Sales_Data_Pipeline
           parent: false
-          glob: '**/*.!(json)'
+          glob: '{models/**,seeds/**,macros/**,snapshots/**,tests/**,dbt_project.yml,packages.yml}'
